@@ -20,7 +20,10 @@ services:
       - POSTGRES_PASSWORD=onlinejudge
 
   judge-server:
-    image: registry.cn-hangzhou.aliyuncs.com/onlinejudge/judge_server
+    image: oj-judgeserver:knue-oj
+    build:
+      context: .
+      dockerfile: JudgeServer/Dockerfile
     container_name: judge-server
     restart: always
     read_only: true
@@ -44,7 +47,10 @@ services:
       # - judger_debug=1
   
   oj-backend:
-    image: registry.cn-hangzhou.aliyuncs.com/onlinejudge/oj_backend
+    image: oj-backend:knue-oj
+    build:
+      context: .
+      dockerfile: OnlineJudgeBE/Dockerfile
     container_name: oj-backend
     restart: always
     depends_on:
