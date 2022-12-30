@@ -20,7 +20,10 @@ services:
       - POSTGRES_PASSWORD=onlinejudge
 
   judge-server:
-    image: knuecomedu/oj-judgeserver:knue-oj
+    image: oj-judgeserver:knue-oj
+    build:
+      context: .
+      dockerfile: JudgeServer/Dockerfile
     container_name: judge-server
     restart: always
     read_only: true
@@ -44,7 +47,10 @@ services:
       # - judger_debug=1
   
   oj-backend:
-    image: knuecomedu/oj-backend:knue-oj
+    image: oj-backend:knue-oj
+    build:
+      context: .
+      dockerfile: OnlineJudgeBE/Dockerfile
     container_name: oj-backend
     restart: always
     depends_on:
@@ -53,6 +59,7 @@ services:
       - judge-server
     volumes:
       - ./data/backend:/data
+      # - ./data/backend/dist:/app/dist
     environment:
       - POSTGRES_DB=onlinejudge
       - POSTGRES_USER=onlinejudge
