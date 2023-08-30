@@ -20,7 +20,11 @@ services:
       - POSTGRES_PASSWORD=onlinejudge
 
   judge-server:
-    image: knuecomedu/oj-judgeserver:knue-oj
+    image: knuecomedu/oj-judgeserver:v1.0
+#    image: oj-judgeserver:knue-oj
+#    build:
+#      context: .
+#      dockerfile: JudgeServer/Dockerfile
     container_name: judge-server
     restart: always
     read_only: true
@@ -44,7 +48,11 @@ services:
       # - judger_debug=1
   
   oj-backend:
-    image: knuecomedu/oj-backend:knue-oj
+    image: knuecomedu/oj-backend:v1.0
+#    image: oj-backend:knue-oj
+#    build:
+#      context: .
+#      dockerfile: OnlineJudgeBE/Dockerfile
     container_name: oj-backend
     restart: always
     depends_on:
@@ -53,15 +61,38 @@ services:
       - judge-server
     volumes:
       - ./data/backend:/data
+      - ./data/backend/dist:/app/dist
     environment:
       - POSTGRES_DB=onlinejudge
       - POSTGRES_USER=onlinejudge
       - POSTGRES_PASSWORD=onlinejudge
       - JUDGE_SERVER_TOKEN=CHANGE_THIS
-      # - ENABLE_AI=1
-      # - AI_SERVER_URL=https://your-ai-server-url
+      - ENABLE_AI=1
+      - AI_SERVER_URL=http://oj-ai:8000/rest-api/
       # - FORCE_HTTPS=1
       # - STATIC_CDN_HOST=cdn.oj.com
     ports:
       - "0.0.0.0:80:8000"
       - "0.0.0.0:443:1443"
+
+  oj-ai:
+    image: knuecomedu/oj-ai:v1.0
+#    image: oj-ai:1.0
+#    build:
+#      context: .
+#      dockerfile: OJ-AI/Dockerfile
+    container_name: oj-ai
+    restart: always
+    depends_on:
+      - oj-backend
+    volumes:
+      - ./data/ai:/app/data
+    environment:
+      - OJ_DB_NAME=onlinejudge
+      - OJ_DB_USER=onlinejudge
+      - OJ_DB_PASSWORD=onlinejudge
+      - OJ_DB_HOST=oj-postgres
+      - OJ_DB_PORT=5432
+      - CHAT_GPT_API_KEY=PASTE_YOUR_OPENAI_API_KEY_HERE
+    ports:
+      - "0.0.0.0:7777:8000"
