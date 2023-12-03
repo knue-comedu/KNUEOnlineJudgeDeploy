@@ -22,6 +22,7 @@ cp OnlineJudgeDeploy/docker-compose.yml docker-compose.yml
 cd OnlineJudgeFE
 
 npm install
+npm run build:dll
 npm run build
 
 cd ..
