@@ -13,7 +13,7 @@ git clone https://github.com/knue-comedu/OnlineJudgeBE OnlineJudgeBE
 git clone https://github.com/knue-comedu/OnlineJudgeDeploy OnlineJudgeDeploy
 git clone https://github.com/knue-comedu/OJ-AI OJ-AI
 
-cp OnlineJudgeDeploy/docker-compose.yml docker-compose.yml
+cp "OnlineJudgeDeploy/for Developer/docker-compose.yml" docker-compose.yml
 ```
 
 ## OnlineJudgeFE Build
