@@ -68,7 +68,7 @@ services:
       - POSTGRES_PASSWORD=onlinejudge
       - JUDGE_SERVER_TOKEN=CHANGE_THIS
       - ENABLE_AI=1
-      - AI_SERVER_URL=http://oj-ai:8000/rest-api/
+      - AI_SERVER_URL=http://oj-ai:8000
       # - FORCE_HTTPS=1
       # - STATIC_CDN_HOST=cdn.oj.com
     ports:
@@ -92,6 +92,6 @@ services:
       - OJ_DB_PASSWORD=onlinejudge
       - OJ_DB_HOST=oj-postgres
       - OJ_DB_PORT=5432
-      - CHAT_GPT_API_KEY=PASTE_YOUR_OPENAI_API_KEY_HERE
+      - OPENAI_API_KEY=PASTE_YOUR_OPENAI_API_KEY_HERE
     ports:
       - "0.0.0.0:7777:8000"
