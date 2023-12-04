@@ -20,7 +20,7 @@ services:
       - POSTGRES_PASSWORD=onlinejudge
 
   judge-server:
-#    image: knuecomedu/oj-judgeserver:v1.0
+#    image: knuecomedu/oj-judgeserver:v231204
     image: oj-judgeserver:knue-oj
     build:
       context: .
@@ -48,7 +48,7 @@ services:
       # - judger_debug=1
   
   oj-backend:
-#    image: knuecomedu/oj-backend:v1.0
+#    image: knuecomedu/oj-backend:v231204
     image: oj-backend:knue-oj
     build:
       context: .
@@ -76,7 +76,7 @@ services:
       - "0.0.0.0:443:1443"
 
   oj-ai:
-    image: oj-ai:v1.0
+    image: oj-ai:knue-oj
     build:
       context: .
       dockerfile: OJ-AI/Dockerfile
