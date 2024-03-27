@@ -1,11 +1,11 @@
 mkdir knue-oj
 cd knue-oj
 
-git clone https://github.com/knue-comedu/Judger Judger
-git clone https://github.com/knue-comedu/JudgeServer JudgeServer
-git clone https://github.com/knue-comedu/OnlineJudgeFE OnlineJudgeFE
-git clone https://github.com/knue-comedu/OnlineJudgeBE OnlineJudgeBE
-git clone https://github.com/knue-comedu/OnlineJudgeDeploy OnlineJudgeDeploy
+git clone git@github.com:knue-comedu/Judge.git Judger
+git clone git@github.com:knue-comedu/JudgeServer.git JudgeServer
+git clone git@github.com:knue-comedu/OnlineJudgeFE.git OnlineJudgeFE
+git clone git@github.com:knue-comedu/OnlineJudgeBE.git OnlineJudgeBE
+git clone git@github.com:knue-comedu/OnlineJudgeDeploy.git OnlineJudgeDeploy
 git clone git@github.com:knue-comedu/OJ-AI.git OJ-AI
 
 cp OnlineJudgeDeploy/docker-compose.yml docker-compose.yml
