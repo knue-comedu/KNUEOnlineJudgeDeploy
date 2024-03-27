@@ -1,15 +1,8 @@
 # How to download KNUE OnlineJudge 
 
-## Download KNUE-OJ docker-compose.yml
+## Download KNUE-OJ docker-compose.yml and up
 
 ```bash
-git clone https://github.com/knue-comedu/OnlineJudgeDeploy
-
-cd OnlineJudgeDeploy
-```
-
-## docker-compose up -d
-
-```bash
+wget https://raw.githubusercontent.com/knue-comedu/OnlineJudgeDeploy/knue-oj/docker-compose.yml
 sudo docker-compose up -d
 ```
