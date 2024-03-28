@@ -1,7 +1,7 @@
 mkdir knue-oj
 cd knue-oj
 
-git clone git@github.com:knue-comedu/Judge.git Judger
+git clone git@github.com:knue-comedu/Judger.git Judger
 git clone git@github.com:knue-comedu/JudgeServer.git JudgeServer
 git clone git@github.com:knue-comedu/OnlineJudgeFE.git OnlineJudgeFE
 git clone git@github.com:knue-comedu/OnlineJudgeBE.git OnlineJudgeBE
