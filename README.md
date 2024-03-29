@@ -49,8 +49,27 @@ sudo docker-compose pull
 sudo docker-compose up -d
 ```
 
-기존 이미지를 제거하려면 아래 명령어를 사용하세요.
+구버전 도커 이미지가 계속 쌓일 경우 서버 용량을 많이 차지할 수 있습니다. 과거 이미지를 제거하려면 아래 명령어를 사용하세요.
 
 ```bash
 sudo docker image prune
 ```
+
+## 초기 관리자 계정 정보
+
+관리자 계정 정보는 다음과 같습니다.   
+ID: root
+PW: rootroot
+
+## 학생 계정 일괄 등록
+
+학생 계정을 일괄 등록하려면, CSV 파일을 만들어야 합니다. 열은 다음과 같습니다.   
+id, password, email, nickname   
+
+이때, 첫 열에 헤더는 입력하지 않습니다. 예를 들어, 학번이 10101~10103인 학생을 등록하고자 하면 다음과 같습니다.   
+
+10101, password1, 10101@knue.ac.kr, 학생1   
+10102, password2, 10102@knue.ac.kr, 학생2   
+10103, password3, 10103@knue.ac.kr, 학생3   
+
+이 CSV 파일을 UTF-8로 반드시 인코딩하여 저장한 후 관리자 계정에서 일괄등록하면 됩니다.
