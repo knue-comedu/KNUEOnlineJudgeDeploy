@@ -66,10 +66,10 @@ services:
       - POSTGRES_USER=onlinejudge
       - POSTGRES_PASSWORD=onlinejudge
       - JUDGE_SERVER_TOKEN=CHANGE_THIS
-      - ENABLE_AI=1
-      - AI_SERVER_URL=http://oj-ai:8000
       # - FORCE_HTTPS=1
       # - STATIC_CDN_HOST=cdn.oj.com
+      # - ENABLE_AI=1
+      # - AI_SERVER_URL=http://oj-ai:8000
     ports:
       - "0.0.0.0:80:8000"
       - "0.0.0.0:443:1443"
