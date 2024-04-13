@@ -1,5 +1,7 @@
 # How to install KNUE OnlineJudge
 
+![](https://github.com/knue-comedu/OnlineJudgeDeploy/blob/knue-oj/KNUE-OJ_preview_202402.gif?raw=true)
+
 KNUE 온라인 저지 설치방법 간단 매뉴얼   
 
 ## Requirements (요구사항)
