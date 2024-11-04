@@ -20,10 +20,9 @@ services:
       - POSTGRES_PASSWORD=onlinejudge
 
   judge-server:
-#    image: knuecomedu/oj-judgeserver:latest
     image: oj-judgeserver:knue-oj
     build:
-      context: for-Developer
+      context: .
       dockerfile: JudgeServer/Dockerfile
     container_name: judge-server
     restart: always
@@ -46,12 +45,11 @@ services:
       - BACKEND_URL=http://oj-backend:8000/api/judge_server_heartbeat/
       - TOKEN=CHANGE_THIS
       # - judger_debug=1
-  
+
   oj-backend:
-#    image: knuecomedu/oj-backend:latest
     image: oj-backend:knue-oj
     build:
-      context: for-Developer
+      context: .
       dockerfile: OnlineJudgeBE/Dockerfile
     container_name: oj-backend
     restart: always
@@ -76,10 +74,9 @@ services:
       - "0.0.0.0:443:1443"
 
   oj-ai:
-#    image: knuecomedu/oj-ai:latest
     image: oj-ai:knue-oj
     build:
-      context: for-Developer
+      context: .
       dockerfile: OJ-AI/Dockerfile
     container_name: oj-ai
     restart: always
