@@ -73,7 +73,7 @@ PW: rootroot
 
 ## 4. 학생 계정 일괄 등록하기
 
-[예시 CSL 파일 다운로드](https://raw.githubusercontent.com/knue-comedu/OnlineJudgeDeploy/user/example_accounts.csv)  
+[예시 CSV 파일 다운로드](https://raw.githubusercontent.com/knue-comedu/OnlineJudgeDeploy/refs/heads/user/example_accounts.csv)  
 
 학생 계정을 일괄 등록하려면, CSV 파일을 만들어야 합니다. 열은 다음과 같습니다.   
 
