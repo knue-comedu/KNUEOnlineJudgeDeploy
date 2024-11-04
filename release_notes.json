@@ -1,6 +1,22 @@
 {
   "update": [
     {
+      "version": "2024-11-04",
+      "level": "Important",
+      "title": "KNUE OnlineJudge v241104",
+      "details": [
+        "OnlineJudge 최신 코드 수정사항 반영"
+      ]
+    },
+    {
+      "version": "2024-03-28",
+      "level": "Recommend",
+      "title": "KNUE OnlineJudge v240328",
+      "details": [
+        "정보 교과 수업을 위한 온라인 저지 시스템"
+      ]
+    },
+    {
       "version": "2024-02-04",
       "level": "Important",
       "title": "OnlineJudge 1.16.0 更新",
