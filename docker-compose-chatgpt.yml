@@ -44,7 +44,7 @@ services:
       # - judger_debug=1
   
   oj-backend:
-    image: knuecomedu/oj-backend:gpt-latest
+    image: knuecomedu/oj-backend:latest
     container_name: oj-backend
     restart: always
     depends_on:
